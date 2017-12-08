@@ -1,4 +1,5 @@
 array = [6,3,8,9,2, 5,1]
+
 def insertion_sort(array)
   for i in 1..(array.length-1)
     key = array[i]
@@ -11,4 +12,5 @@ def insertion_sort(array)
   end
   array
 end
+
 p insertion_sort(array)

@@ -1,4 +1,5 @@
 def bubble_sort(array)
+  return if array.
   n = array.length
   loop do
     swapped = false
