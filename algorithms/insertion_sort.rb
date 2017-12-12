@@ -1,6 +1,9 @@
-array = [6,3,8,9,2, 5,1]
+def insertion_sort(arr)
+  #check if array is empty
+  remove =[nil, false]
+  array = arr-remove
+  return 'array is empty' if array.empty?
 
-def insertion_sort(array)
   for i in 1..(array.length-1)
     key = array[i]
     j=i-1
@@ -13,4 +16,6 @@ def insertion_sort(array)
   array
 end
 
+array = [6,3,8,9,2, 5,1]
 p insertion_sort(array)
+
