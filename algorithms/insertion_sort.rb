@@ -1,19 +1,16 @@
+#insertion sort
 def insertion_sort(arr)
-  #check if array is empty
-  remove =[nil, false]
-  array = arr-remove
-  return 'array is empty' if array.empty?
 
-  for i in 1..(array.length-1)
-    key = array[i]
+  for i in 1..(arr.length-1)
+    key = arr[i]
     j=i-1
-    while j>=0 && array[j]>key
-      array[j+1]= array[j]
+    while j>=0 && arr[j]>key
+      arr[j+1]= arr[j]
       j=j-1
     end
-    array[j+1]= key
+    arr[j+1]= key
   end
-  array
+  arr
 end
 
 array = [6,3,8,9,2, 5,1]
