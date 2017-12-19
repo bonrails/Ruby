@@ -1,8 +1,5 @@
+#bubble sort
 def bubble_sort(arr)
-  #check if array is empty
-  remove =[nil, false]
-  array = arr-remove
-  return 'array is empty' if array.empty?
 
   n = array.length
   loop do
