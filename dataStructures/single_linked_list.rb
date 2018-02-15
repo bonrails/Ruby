@@ -25,16 +25,15 @@ class LinkedList
     return if !@head
     node=@head
     @head= node.next if node.value == val
-    if node.next
-      until node.next.value == val
-          node = node.next
-      end
-      node.next=node.next.next
+
+    while node.next
+      node.next=node.next.next if node.next.value == val
+      node = node.next
     end
   end
 
   def print
-    return 'linked list empty' if !@head
+    return 'linked list is empty' if !@head
     node = @head
     nodes = []
     while  node
@@ -43,15 +42,27 @@ class LinkedList
     end
      nodes
   end
+
+  def find(val)
+    return if !@head
+    node = @head
+    while node
+      return true if node.value == val
+      node = node.next
+    end
+    return false
+  end
 end
 
 linkedList = LinkedList.new(3)
-#linkedList.append(5)
-#linkedList.append(8)
-#linkedList.append(4)
-linkedList.delete(3)
-linkedList.delete(3)
+linkedList.append(5)
+linkedList.append(8)
+linkedList.append(4)
+#linkedList.delete(3)
+#linkedList.delete(3)
 p linkedList.print
+
+p linkedList.find(9)
 
 
 
