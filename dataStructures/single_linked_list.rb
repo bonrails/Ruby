@@ -1,6 +1,7 @@
 class Node
   attr_accessor :next
   attr_reader   :value
+
   def initialize(val)
     @value = val
     @next = nil
@@ -20,16 +21,10 @@ class LinkedList
     current.next = Node.new(val)
   end
 
-  def append_after
-
-  end
-
   def delete(val)
     return if !@head
     node=@head
-    if node.value == val
-      @head= node.next
-    end
+    @head= node.next if node.value == val
     if node.next
       until node.next.value == val
           node = node.next
