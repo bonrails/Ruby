@@ -67,7 +67,7 @@ class LinkedList
       current = @head
       previous = nil
       return if !@head || !@head.next
-      while (current!= nil)  ####check with NULL
+      while (current!= nil)
           temp = current.next
           current.next = previous
           previous = current
