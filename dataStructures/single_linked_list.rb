@@ -64,16 +64,16 @@ class LinkedList
 
   #reverse linked list
   def reverse_list
-      current = @head
-      previous = nil
-      return if !@head || !@head.next
-      while (current!= nil)
-          temp = current.next
-          current.next = previous
-          previous = current
-          current = temp
-      end
-       @head = previous
+    return if !@head || !@head.next
+    current = @head
+    previous = nil
+    while (current!= nil)
+        temp = current.next
+        current.next = previous
+        previous = current
+        current = temp
+    end
+    @head = previous
   end
 end
 
