@@ -43,6 +43,7 @@ class LinkedList
      nodes
   end
 
+  #iterative way of finding value
   def find(val)
     return if !@head
     node = @head
@@ -52,17 +53,40 @@ class LinkedList
     end
     return false
   end
+
+  #recursive way of finding value
+  def find_recursive(head = @head, val)
+    return false if !@head
+    node = @head
+    return true if node.value == val
+    return find_recursive(node.next, val)
+  end
+
+  #reverse linked list
+  def reverse_list
+      current = @head
+      previous = nil
+      return if !@head || !@head.next
+      while (current!= nil)  ####check with NULL
+          temp = current.next
+          current.next = previous
+          previous = current
+          current = temp
+      end
+       @head = previous
+  end
 end
 
 linkedList = LinkedList.new(3)
 linkedList.append(5)
 linkedList.append(8)
 linkedList.append(4)
-#linkedList.delete(3)
-#linkedList.delete(3)
+##linkedList.delete(3)
+##linkedList.delete(3)
 p linkedList.print
-
-p linkedList.find(9)
+ linkedList.reverse_list
+p linkedList.print
+#p linkedList.find_recursive(nil, 9)
 
 
 
